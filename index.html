@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Something From My Heart ❤️</title>
+<style>
+ #noBtn {
+            background: #f44336;
+            color: white;
+            position: absolute;
+        }
+		
+		#message {
+            margin-top: 30px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+		
+		
+		#reply {
+    display:none;
+    margin-top:25px;
+    padding:20px;
+    border-radius:18px;
+    background:#fff0f4;
+    color:#8e2947;
+    line-height:1.7;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Poppins,sans-serif;color:#542331;
+  background:#fff8f8;overflow-x:hidden;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:10;opacity:.22;
+  background-image:radial-gradient(#c86b80 0.7px,transparent .7px);
+  background-size:18px 18px;
+}
+.hero{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:40px 20px;position:relative;
+  background:linear-gradient(135deg,#fff7f7 0%,#ffe5eb 48%,#f8d5df 100%);
+}
+.hero-inner{max-width:800px;position:relative;z-index:2}
+.eyebrow{letter-spacing:4px;text-transform:uppercase;font-size:12px;color:#a34b64}
+h1{
+  font-family:"Playfair Display",serif;font-size:clamp(48px,9vw,88px);
+  line-height:1.05;margin:18px 0;color:#8e2947;
+}
+.hero p{font-size:18px;line-height:1.8;max-width:620px;margin:auto}
+.heart-big{font-size:76px;animation:pulse 1.7s infinite}
+@keyframes pulse{50%{transform:scale(1.13)}}
+.scroll{display:inline-block;margin-top:35px;color:#8e2947;text-decoration:none;font-size:13px}
+.section{padding:90px 20px;position:relative}
+.section-inner{max-width:950px;margin:auto}
+.card{
+  background:rgba(255,255,255,.86);border:1px solid #f3d5dc;
+  border-radius:28px;padding:45px;box-shadow:0 20px 60px rgba(122,45,68,.10);
+}
+.section-title{text-align:center;font-family:"Playfair Display",serif;font-size:42px;color:#8e2947;margin-bottom:15px}
+.section-sub{text-align:center;color:#8b6470;margin-bottom:38px}
+.letter{
+  font-family:Caveat,cursive;font-size:28px;line-height:1.55;color:#63303f;
+}
+.letter p{margin-bottom:20px}
+.signature{font-size:30px;margin-top:25px}
+.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.photo{
+  aspect-ratio:1/1;overflow:hidden;border-radius:20px;background:#f5dce2;
+  border:5px solid white;box-shadow:0 10px 25px rgba(100,30,50,.12);
+}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo .placeholder{
+  height:100%;display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:20px;color:#9b6877;font-size:14px;
+}
+.timeline{position:relative;max-width:720px;margin:auto}
+.timeline:before{content:"";position:absolute;left:20px;top:0;bottom:0;width:2px;background:#edc3cd}
+.memory{position:relative;padding-left:60px;margin-bottom:35px}
+.dot{position:absolute;left:10px;top:3px;width:22px;height:22px;border-radius:50%;background:#b83d5c;border:5px solid #fff}
+.memory h3{font-family:"Playfair Display",serif;color:#8e2947;font-size:24px}
+.memory p{margin-top:7px;line-height:1.7;color:#70505a}
+.quote{
+  text-align:center;font-family:Caveat,cursive;font-size:35px;color:#a12f50;
+  padding:30px 10px;
+}
+.actions{text-align:center}
+.btn{
+  border:0;border-radius:999px;padding:15px 28px;margin:7px;
+  font:500 16px Poppins;cursor:pointer;transition:.25s;
+}
+.btn-primary{background:#a92f50;color:white;box-shadow:0 10px 25px rgba(169,47,80,.25)}
+.btn-soft{background:#fae3e9;color:#8e2947}
+.btn:hover{transform:translateY(-2px) scale(1.02)}
+#reply{display:none;margin-top:25px;padding:20px;border-radius:18px;background:#fff0f4;color:#8e2947;line-height:1.7}
+#reactionArea{margin-top:25px;text-align:center;min-height:20px}
+#reactionGif{display:none;width:220px;max-width:80vw;max-height:220px;object-fit:contain;margin:15px auto;border-radius:18px;box-shadow:0 10px 25px rgba(100,30,50,.12)}
+#message{font-size:20px;font-weight:600;color:#8e2947;margin-top:10px;min-height:30px}
+.music{
+  position:fixed;right:18px;bottom:18px;z-index:20;border:0;border-radius:999px;
+  background:#8e2947;color:#fff;padding:12px 17px;cursor:pointer;box-shadow:0 8px 25px #0002
+}
+.floating-heart{
+ position:fixed;bottom:-30px;z-index:15;pointer-events:none;animation:rise linear forwards;
+}
+@keyframes rise{to{transform:translateY(-110vh) rotate(360deg);opacity:0}}
+footer{text-align:center;padding:35px 20px;color:#a17480;font-size:13px}
+@media(max-width:700px){
+ .card{padding:28px 20px}.photos{grid-template-columns:1fr 1fr}
+ .section{padding:65px 15px}.letter{font-size:25px}
+}
+@media(max-width:430px){.photos{grid-template-columns:1fr}.section-title{font-size:34px}}
+</style>
+</head>
+<body>
+
+<!-- OPTIONAL MUSIC:
+     Put your music file in this folder and name it music.mp3.
+     Autoplay is intentionally off because mobile browsers often block autoplay.
+-->
+<audio id="music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+<button class="music" onclick="toggleMusic()" id="musicBtn">♫ Music</button>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="heart-big">❤️</div>
+    <div class="eyebrow"></div>
+    <!-- CHANGE THE NAME -->
+    <h1>I'm Sorry, Achu</h1>
+    <p>
+      I could write a hundred messages, make a thousand excuses,
+      or simply say “sorry” again and again.
+      But this time, I wanted you to see how much I truly mean it.
+    </p>
+    <a class="scroll" href="#letter">↓ Read my heart</a>
+  </div>
+</section>
+
+<section class="section" id="letter">
+  <div class="section-inner">
+    <div class="card">
+      <h2 class="section-title">A Letter For You 💌</h2>
+      <div class="letter">
+        <!-- REPLACE THIS LETTER WITH YOUR OWN WORDS -->
+        <p>My Dear Harshitha,</p>
+ <p class="apology">
+   I'm truly sorry for everything that happened. I know that saying sorry can't instantly make everything okay.
+
+I know you are hurt and maybe you don't want to talk to me right now. I will give you the space you need.
+
+But please know that I am genuinely sorry for hurting you and for all the toxicity that happened because of me. I never wanted things to reach this point.
+
+You mean so much to me, and all I want is a chance to make things right. I'm not asking you to forget everything — I'm only asking you to forgive me.
+
+I'm really sorry.
+    </p>        
+
+        <!-- CHANGE YOUR NAME -->
+        <div class="signature">— G</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--
+<section class="section">
+  <div class="section-inner">
+    <h2 class="section-title">Our Little Memories 📸</h2>
+    <p class="section-sub">Replace these with your own photos.</p>
+
+    <div class="photos">
+      <div class="photo">
+        <div class="placeholder">Add photo 1<br>Save it as photo1.jpg</div>
+      </div>
+      <div class="photo">
+        <div class="placeholder">Add photo 2<br>Save it as photo2.jpg</div>
+      </div>
+      <div class="photo">
+        <div class="placeholder">Add photo 3<br>Save it as photo3.jpg</div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section class="section">
+  <div class="section-inner">
+    <div class="quote">
+      “I don't want to win an argument.<br>
+      I want to win back your smile.”
+    </div>
+
+    <div class="card actions">
+      <div class="heart-big">🥺</div>
+      <h2 class="section-title">One Question...</h2>
+      <p class="section-sub">I know I can't ask you to forget. But can you give me a chance to make things right?<br>
+	  Select any one to share your response</p>
+
+      <button class="btn btn-primary" onclick="forgive()">I forgive you ❤️</button>
+      <!--<button class="btn btn-soft" onclick="time()">I need some time 🥺</button>-->
+	  <button class="btn btn-soft" id="noBtn" onclick="noClicked()">I need some time 😢</button>
+
+      <div id="reactionArea">
+        <img id="reactionGif" src="" alt="Reaction GIF">
+        <div id="message"></div>
+      </div>
+
+      <div id="reply"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Made with love, honesty, and a little bit of regret. ❤️
+</footer>
+
+<script>
+const music = document.getElementById("music");
+const musicBtn = document.getElementById("musicBtn");
+
+ const noBtn = document.getElementById("noBtn");
+const message = document.getElementById("message");
+const gif = document.getElementById("reactionGif");
+let clickCount = 0;
+
+const reactions = [
+  {message:"Sure ah? 🥺",gif:"https://media.giphy.com/media/ROF8OQvDmxytW/giphy.gif"},
+  {message:"Please Achu, don't say NO 😭",gif:"https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif"},
+  {message:"Think again ma... 💔",gif:"https://media.giphy.com/media/9Y5BbDSkSTiY8/giphy.gif"},
+  {message:"Enna ma epdi pandra? 😭",gif:"https://media.giphy.com/media/OPU6wzx8JrHna/giphy.gif"},
+  {message:"Okay... irukutum evlo neram pandra pakalam😂",gif:"https://media.giphy.com/media/10tIjpzIu8fe0/giphy.gif"},
+  {message:"You really want to click NO again? 😏",gif:"https://media.giphy.com/media/111ebonMs90YLu/giphy.gif"},
+  {message:"JUST SAY YES! ❤️🥺",gif:"https://media.giphy.com/media/26BRuo6sLetdllPAQ/giphy.gif"}
+];
+
+function noClicked(){
+  clickCount++;
+  const maxX=Math.max(20,window.innerWidth-noBtn.offsetWidth-20);
+  const maxY=Math.max(20,window.innerHeight-noBtn.offsetHeight-20);
+  noBtn.style.left=(Math.random()*maxX)+"px";
+  noBtn.style.top=(Math.random()*maxY)+"px";
+
+  const reaction=reactions[(clickCount-1)%reactions.length];
+  message.textContent=reaction.message;
+  gif.onload=()=>{gif.style.display="block";};
+  gif.onerror=()=>{gif.style.display="none";};
+  gif.src=reaction.gif;
+}
+
+function toggleMusic(){
+  if(music.paused){
+    music.play().then(() => musicBtn.textContent="♫ Pause")
+      .catch(() => alert("Add a file named music.mp3 next to index.html first."));
+  }else{
+    music.pause();
+    musicBtn.textContent="♫ Music";
+  }
+}
+
+function showReply(message){
+  const box=document.getElementById("reply");
+  box.innerHTML=message;
+  box.style.display="block";
+  box.scrollIntoView({behavior:"smooth",block:"center"});
+}
+
+function forgive(){
+  showReply("🥹❤️ Thank you. I promise I won't take your forgiveness for granted. I will let my actions speak louder than this apology.");
+  burstHearts();
+}
+
+function time(){
+  showReply("I understand. ❤️ Take whatever time you need. I won't pressure you. I just wanted you to know that I'm genuinely sorry.");
+}
+
+function burstHearts(){
+  for(let i=0;i<35;i++){
+    const h=document.createElement("div");
+    h.className="floating-heart";
+    h.textContent=["❤️","💕","💗","💖","🥰"][Math.floor(Math.random()*5)];
+    h.style.left=Math.random()*100+"vw";
+    h.style.fontSize=(18+Math.random()*25)+"px";
+    h.style.animationDuration=(3+Math.random()*3)+"s";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),6500);
+  }
+}
+
+/* Gentle floating hearts */
+setInterval(()=>{
+  const h=document.createElement("div");
+  h.className="floating-heart";
+  h.textContent=["♡","❤️","♡","💕"][Math.floor(Math.random()*4)];
+  h.style.left=Math.random()*100+"vw";
+  h.style.fontSize=(12+Math.random()*15)+"px";
+  h.style.animationDuration=(7+Math.random()*5)+"s";
+  h.style.opacity=.45;
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),13000);
+},1200);
+</script>
+</body>
+</html>
